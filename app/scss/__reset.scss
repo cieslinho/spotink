@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+*ul {
+	list-style-type: none;
+}
+
+*a {
+	text-decoration: none;
+}
+
+::selection {
+	background-color: $rose;
+	color: $black;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	background-color: $purple;
+	color: $white;
+	font-size: 1.6rem;
+	font-family: 'Poppins', sans-serif;
+}
