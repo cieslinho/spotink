@@ -1,0 +1,121 @@
+.offer {
+	@include section-padding;
+
+	&__boxes {
+		display: grid;
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1em;
+		@include respond(tablet) {
+			gap: 1.5em;
+		}
+	}
+
+	&__box {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+		transition: transform 0.3s, box-shadow 0.3s;
+		border: 1px solid $lightgray;
+		border-radius: 10px;
+		padding: 1em 1em;
+		height: 200px;
+		overflow: hidden;
+
+		&:hover {
+			box-shadow: 0 0 10px $gray;
+		}
+
+		@include respond(tablet) {
+			&:hover {
+				transform: scale(1.02);
+			}
+		}
+	}
+
+	&__icon {
+		font-size: 4rem;
+
+		@include respond(tablet) {
+			font-size: 6rem;
+		}
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 2rem;
+		text-align: center;
+
+		@include respond(tablet) {
+			font-size: 2.5rem;
+		}
+	}
+
+	&__span {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: $yellow;
+		padding: 0.3em 0.6em;
+		font-weight: 600;
+		font-size: 1.3rem;
+		text-transform: uppercase;
+
+		@include respond(tablet) {
+			font-size: 1.6rem;
+		}
+	}
+
+	&__btn {
+		display: block;
+		transition: background-color 0.3s, color 0.3s;
+
+		border-radius: 10px;
+		background-color: $yellow;
+		padding: 0.5em 1em;
+		color: $black;
+		font-weight: 600;
+		text-align: center;
+
+		@include respond(tablet) {
+			font-size: 2rem;
+		}
+
+		&:hover {
+			background-color: $black;
+			color: $white;
+		}
+	}
+
+	&__texts {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.1em;
+		margin-block: 1.5em;
+
+		@include respond(tablet) {
+			margin-block: 2em;
+		}
+	}
+
+	&__text {
+		line-height: 180%;
+		// font-weight: 600;
+		text-align: center;
+
+		@include respond(tablet) {
+			font-size: 1.8rem;
+		}
+
+		span {
+			background-color: $yellow;
+			padding: 0.1em 0.3em;
+			font-weight: 600;
+		}
+	}
+}

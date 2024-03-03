@@ -5,8 +5,45 @@
 	max-width: 1600px;
 }
 
-.section-title {
+.section-container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
 }
 
+.section-titles {
+	display: flex;
+	flex-direction: column;
+	gap: 0.1em;
+	margin-bottom: 1.5em;
 
+	@include respond(tablet) {
+		margin-bottom: 2.5em;
+	}
 
+	&-right {
+		align-items: flex-end;
+	}
+
+	&-center {
+		align-items: center;
+	}
+}
+
+.section-title-top {
+	font-weight: 400;
+	font-size: 1.8rem;
+
+	@include respond(tablet) {
+		font-size: 2.2rem;
+	}
+}
+
+.section-title-bottom {
+	font-weight: 600;
+	font-size: 2.3rem;
+
+	@include respond(tablet) {
+		font-size: 3rem;
+	}
+}

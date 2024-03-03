@@ -32,7 +32,7 @@ add_action( 'admin_enqueue_scripts', 'spotink_admin_style' );
 function spotink_config(){
   register_nav_menus(
     array(
-  'spotink_main_menu' => 'spot Main Menu',
+  'spotink_main_menu' => 'Spotink Main Menu',
     )
   );
 }
@@ -69,12 +69,34 @@ add_theme_support('post-thumbnails', array(
     return $trimmed_text;
     }
   
-
-    function add_additional_class($classes, $item, $args){
-      if(isset($args->add_li_class)){
-          $classes[] = $args->add_li_class;
+    function li_menu_class($classes, $item, $args) {
+      if($args->theme_location == 'spotink_main_menu') {
+        $classes[] = 'nav__menu-item';
+      }
+      if($args->theme_location == 'spotink_footer_menu') {
+        $classes[] = 'footer__menu-item';
       }
       return $classes;
-  }
+    }
+    add_filter('nav_menu_css_class','li_menu_class',1,3);
+
+
+    function add_class_on_a_tag_first($classes, $item, $args)
+{
+    if (isset($args->add_a_class)) {
+        $classes['class'] = $args->add_a_class;
+    }
+return $classes;
+}
+
+
+add_filter('nav_menu_link_attributes', 'add_class_on_a_tag_first', 1, 3);
+    function add_class_on_a_tag($classes, $item, $args)
+{
+    if (isset($args->add_a_class)) {
+        $classes['class'] = $args->add_a_class;
+    }
+return $classes;
+}
+
   
-  add_filter('nav_menu_css_class', 'add_additional_class', 1, 3);

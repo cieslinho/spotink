@@ -1,0 +1,97 @@
+.portfolio {
+	@include section-padding;
+	text-align: center;
+
+	&__text {
+		line-height: 180%;
+		@include respond(tablet) {
+			font-size: 1.8rem;
+		}
+	}
+
+	&__boxes {
+		display: flex;
+		flex-direction: column;
+		margin-top: 1.5em;
+		border-radius: 10px;
+		overflow: hidden;
+
+		@include respond(tablet) {
+			display: grid;
+			grid-template-rows: 1fr;
+			grid-template-columns: repeat(2, 1fr);
+			margin-top: 2em;
+		}
+
+		@include respond(tablet-xl) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__box {
+		position: relative;
+
+		overflow: hidden;
+
+		@include respond(tablet) {
+			height: 350px;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 5;
+
+			background-color: rgba($color: $black, $alpha: 0.6);
+			padding: 1em;
+			width: 100%;
+			height: 100%;
+			content: '';
+		}
+	}
+
+	&__box:hover &__img {
+		transform: scale(1.05);
+	}
+
+	&__texts {
+		display: flex;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		flex-direction: column;
+		gap: 0.3em;
+		transform: translate(-50%, -50%);
+		z-index: 20;
+		width: 100%;
+		color: $white;
+		// text-transform: uppercase;
+	}
+
+	&__title {
+		font-weight: 900;
+		font-size: 2.5rem;
+		text-transform: uppercase;
+
+		@include respond(tablet) {
+			font-size: 3rem;
+		}
+	}
+
+	&__description {
+		font-weight: 300;
+		font-size: 1.8rem;
+		@include respond(tablet) {
+			font-size: 2rem;
+		}
+	}
+
+	&__img {
+		z-index: 0;
+		transition: transform 0.3s;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

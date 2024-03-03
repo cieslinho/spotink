@@ -1,5 +1,8 @@
-@import '__colors.scss';
+@import '__variables.scss';
+@import '__reset.scss';
 @import '__mixins.scss';
 @import '__components.scss';
-@import '__reset.scss';
-
+@import '__nav.scss';
+@import '__header.scss';
+@import '__offer.scss';
+@import '__portfolio.scss';

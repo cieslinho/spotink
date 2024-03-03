@@ -1,0 +1,126 @@
+.header {
+	margin: 0 auto;
+	background-color: $yellow;
+	padding: 0.5em;
+	padding-top: 120px;
+	width: 100%;
+	max-width: 1600px;
+	height: 100vh;
+
+	@include respond(tablet) {
+		padding-top: 185px;
+		height: 100vh;
+	}
+
+	&__swiper {
+		box-shadow: 0 0 10px $gray;
+		border: 2px solid $darkyellow;
+		border-radius: 10px;
+		background-color: $lightgray;
+		padding: 1em;
+		padding-top: 1em;
+		max-width: 1400px !important;
+		height: 100%;
+
+		@include respond(tablet) {
+			height: 80%;
+		}
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 1em;
+		padding: 0.5em 1em;
+		width: 100% !important;
+		height: 100% !important;
+
+		@include respond(tablet) {
+			flex-direction: row;
+			align-items: flex-start;
+			margin-top: 3.5em;
+		}
+
+		&-img {
+			width: 100%;
+
+			@include respond(tablet) {
+				width: 40%;
+			}
+		}
+	}
+
+	&__texts {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.3em;
+		// padding: 0.5em;
+	}
+
+	&__title {
+		color: $black;
+		font-size: 3rem;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+
+		@include respond(tablet) {
+			font-size: 3.5rem;
+		}
+	}
+
+	&__description {
+		margin-bottom: 0.5em;
+		color: $black;
+		font-weight: 300;
+		font-size: 1.8rem;
+		@include respond(tablet) {
+			font-size: 2rem;
+		}
+		position: relative;
+	}
+
+	&__text {
+		border-radius: 10px;
+		background-color: $gray;
+		padding: 0.3em 0.6em;
+	}
+
+	&__btn {
+		transition: background-color 0.2s, color 0.2s;
+		margin-top: 1em;
+		border-radius: 10px;
+		background-color: $yellow;
+		padding: 0.5em 1em;
+		color: $black;
+		font-weight: 600;
+		text-transform: uppercase;
+
+		&:hover {
+			background-color: $black;
+			color: $white;
+		}
+
+		@include respond(tablet) {
+			font-size: 2rem;
+		}
+	}
+
+	&__pagination {
+		@include respond(tablet) {
+			top: 50px;
+			bottom: inherit !important;
+			left: 0 !important;
+			padding: 0 2em;
+			text-align: left;
+		}
+
+		.swiper-pagination-bullet {
+			&-active {
+				background-color: $black;
+			}
+		}
+	}
+}
